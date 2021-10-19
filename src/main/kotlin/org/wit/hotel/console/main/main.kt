@@ -52,26 +52,26 @@ fun menu() : Int {
 }
 
 fun addHotel(){
-    var hotel= hotelModel()
+    var hotel1= hotelModel()
 
     println("Add Hotel")
     println()
     print(" Enter name of the Hotel:")
-   hotel.name= readLine()!!
+   hotel1.name= readLine()!!
     print(" Please type description for the hotel:")
-    hotel.description= readLine()!!
+    hotel1.description= readLine()!!
     print(" What types of room hotel has?:")
-    hotel.roomType= readLine()!!
+    hotel1.roomType= readLine()!!
     print(" What is location of the hotel:")
-    hotel.location= readLine()!!
+    hotel1.location= readLine()!!
     print(" Contact number for the hotel:")
-    hotel.phoneNo= readLine()!!
-   println("You have enter ["+ hotel.name +"] for a name of the hotel and ["+ hotel.description +"] for a description. Hotel has ["+ hotel.roomType +"] room types and location and phone number for the hotel are ["+ hotel.location +"], ["+ hotel.phoneNo +"]")
+    hotel1.phoneNo= readLine()!!
+   println("You have enter ["+ hotel1.name +"] for a name of the hotel and ["+ hotel1.description +"] for a description. Hotel has ["+ hotel1.roomType +"] room types and location and phone number for the hotel are ["+ hotel1.location +"], ["+ hotel1.phoneNo +"]")
 
-    if (hotel.name.isNotEmpty() && hotel.description.isNotEmpty() && hotel.roomType.isNotEmpty() && hotel.location.isNotEmpty()&& hotel.phoneNo.isNotEmpty()) {
-        hotel.id=hotels.size.toLong()
-        hotels.add(hotel.copy())
-        logger.info("You added Hotel : [ $hotel ]")
+    if (hotel1.name.isNotEmpty() && hotel1.description.isNotEmpty() && hotel1.roomType.isNotEmpty() && hotel1.location.isNotEmpty()&& hotel1.phoneNo.isNotEmpty()) {
+        hotel1.id=hotels.size.toLong()
+        hotels.add(hotel1.copy())
+        logger.info("You added Hotel : [ $hotel1 ]")
     }
     else
         logger.info("Hotel is not added")
@@ -83,24 +83,24 @@ fun updateHotel(){
     println()
     listHotels()
     var Id= fetchId()
-    val hotel=search(Id)
+    val hotel1=search(Id)
 
-    if(hotel !=null) {
-        print("Please put new name of the hotel [" + hotel.name + "]:")
-        hotel.name = readLine()!!
-        print("Please put new description of the hotel [" + hotel.description + "]:")
-        hotel.description = readLine()!!
-        print("Please put new room type of the hotel [" + hotel.roomType + "]:")
-        hotel.roomType = readLine()!!
-        print("Please put new location of the hotel [" + hotel.location + "]:")
-        hotel.location = readLine()!!
-        print("Please put new phone number of the hotel [" + hotel.phoneNo + "]:")
-        hotel.phoneNo = readLine()!!
+    if(hotel1 !=null) {
+        print("Please put new name of the hotel [" + hotel1.name + "]:")
+        hotel1.name = readLine()!!
+        print("Please put new description of the hotel [" + hotel1.description + "]:")
+        hotel1.description = readLine()!!
+        print("Please put new room type of the hotel [" + hotel1.roomType + "]:")
+        hotel1.roomType = readLine()!!
+        print("Please put new location of the hotel [" + hotel1.location + "]:")
+        hotel1.location = readLine()!!
+        print("Please put new phone number of the hotel [" + hotel1.phoneNo + "]:")
+        hotel1.phoneNo = readLine()!!
         println(
-            "New changes are updated" + "Hotel name is [" + hotel.name
+            "New changes are updated" + "Hotel name is [" + hotel1.name
                     + "]" +
-                    "Hotel description is [" + hotel.description + "] with new room types [" + hotel.roomType + "]" +
-                    "New location and phone number are [" + hotel.location + "],[" + hotel.phoneNo + "]"
+                    "Hotel description is [" + hotel1.description + "] with new room types [" + hotel1.roomType + "]" +
+                    "New location and phone number are [" + hotel1.location + "],[" + hotel1.phoneNo + "]"
         )
     }
     else
