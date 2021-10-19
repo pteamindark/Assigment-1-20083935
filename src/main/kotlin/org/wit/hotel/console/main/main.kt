@@ -1,14 +1,12 @@
 package org.wit.hotel.console.main
 
 import mu.KotlinLogging
+import org.wit.hotel.console.models.hotelModel
 
 private val logger= KotlinLogging.logger {}
 
-var name=""
-var description=""
-var roomType=""
-var location=""
-var phoneNo=""
+var hotel= hotelModel()
+
 
 fun main(args: Array<String>){
     println("Hotel App")
@@ -55,34 +53,35 @@ fun addHotel(){
     println("Add Hotel")
     println()
     print(" Enter name of the Hotel:")
-    name= readLine()!!
+   hotel.name= readLine()!!
     print(" Please type description for the hotel:")
-    description= readLine()!!
+    hotel.description= readLine()!!
     print(" What types of room hotel has?:")
-    roomType= readLine()!!
+    hotel.roomType= readLine()!!
     print(" What is location of the hotel:")
-    location= readLine()!!
+    hotel.location= readLine()!!
     print(" Contact number for the hotel:")
-    phoneNo= readLine()!!
-   println("You have enter [$name] fora a name of the hotel and [$description] for a description. Hotel has [$roomType] room types and location and phone number for the hotel are [$location], [$phoneNo]")
+    hotel.phoneNo= readLine()!!
+   println("You have enter ["+ hotel.name +"] for a name of the hotel and ["+ hotel.description +"] for a description. Hotel has ["+ hotel.roomType +"] room types and location and phone number for the hotel are ["+ hotel.location +"], ["+ hotel.phoneNo +"]")
 }
 
 fun updateHotel(){
     println("Update Hotel details")
     println()
-    print("Please put new name of the hotel [$name]:")
-    name= readLine()!!
-    print("Please put new description of the hotel [$description]:")
-    description= readLine()!!
-    print("Please put new room type of the hotel [$roomType]:")
-    roomType= readLine()!!
-    print("Please put new location of the hotel [$location]:")
-    location= readLine()!!
-    print("Please put new phone number of the hotel [$phoneNo]:")
-    phoneNo= readLine()!!
-    println("New changes are updated"+"Hotel name is [$name]"+
-            "Hotel description is [$description] with new room types [$roomType]"+
-            "New location and phone number are [$location],[$phoneNo]")
+    print("Please put new name of the hotel ["+ hotel.name +"]:")
+    hotel.name= readLine()!!
+    print("Please put new description of the hotel ["+ hotel.description +"]:")
+    hotel.description= readLine()!!
+    print("Please put new room type of the hotel ["+ hotel.roomType +"]:")
+    hotel.roomType= readLine()!!
+    print("Please put new location of the hotel ["+ hotel.location +"]:")
+    hotel.location= readLine()!!
+    print("Please put new phone number of the hotel ["+ hotel.phoneNo +"]:")
+    hotel.phoneNo= readLine()!!
+    println("New changes are updated"+"Hotel name is ["+ hotel.name
+            +"]"+
+            "Hotel description is ["+ hotel.description +"] with new room types ["+ hotel.roomType +"]"+
+            "New location and phone number are ["+ hotel.location +"],["+ hotel.phoneNo +"]")
 
 }
 
