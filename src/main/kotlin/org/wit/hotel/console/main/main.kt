@@ -6,6 +6,7 @@ import org.wit.hotel.console.models.hotelModel
 private val logger= KotlinLogging.logger {}
 
 var hotel= hotelModel()
+val hotels= ArrayList<hotelModel>()
 
 
 fun main(args: Array<String>){
@@ -63,6 +64,14 @@ fun addHotel(){
     print(" Contact number for the hotel:")
     hotel.phoneNo= readLine()!!
    println("You have enter ["+ hotel.name +"] for a name of the hotel and ["+ hotel.description +"] for a description. Hotel has ["+ hotel.roomType +"] room types and location and phone number for the hotel are ["+ hotel.location +"], ["+ hotel.phoneNo +"]")
+
+    if (hotel.name.isNotEmpty() && hotel.description.isNotEmpty() && hotel.roomType.isNotEmpty() && hotel.location.isNotEmpty()&& hotel.phoneNo.isNotEmpty()) {
+        hotels.add(hotel.copy())
+        logger.info("You added Hotel : [ $hotel ]")
+    }
+    else
+        logger.info("Hotel is not added")
+
 }
 
 fun updateHotel(){
@@ -87,4 +96,6 @@ fun updateHotel(){
 
 fun listHotels(){
     println("Selected List All Hotels")
+    println()
+    hotels.forEach { logger.info("${it}") }
 }
