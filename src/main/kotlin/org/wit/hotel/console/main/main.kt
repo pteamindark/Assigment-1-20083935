@@ -78,35 +78,55 @@ fun addHotel(){
 
 }
 
-fun updateHotel(){
+fun updateHotel() {
     println("Update Hotel details")
     println()
     listHotels()
-    var Id= fetchId()
-    val hotel1=search(Id)
+    var Id = fetchId()
+    val hotel1 = search(Id)
+    var tempName: String?
+    var tempDescript : String?
+    var tempRoomtype : String?
+    var tempLocation : String?
+    var tempPhoneNo : String?
 
-    if(hotel1 !=null) {
+    if (hotel1 != null) {
         print("Please put new name of the hotel [" + hotel1.name + "]:")
-        hotel1.name = readLine()!!
+        tempName = readLine()!!
         print("Please put new description of the hotel [" + hotel1.description + "]:")
-        hotel1.description = readLine()!!
+        tempDescript = readLine()!!
         print("Please put new room type of the hotel [" + hotel1.roomType + "]:")
-        hotel1.roomType = readLine()!!
+        tempRoomtype = readLine()!!
         print("Please put new location of the hotel [" + hotel1.location + "]:")
-        hotel1.location = readLine()!!
+        tempLocation = readLine()!!
         print("Please put new phone number of the hotel [" + hotel1.phoneNo + "]:")
-        hotel1.phoneNo = readLine()!!
-        println(
-            "New changes are updated" + "Hotel name is [" + hotel1.name
-                    + "]" +
-                    "Hotel description is [" + hotel1.description + "] with new room types [" + hotel1.roomType + "]" +
-                    "New location and phone number are [" + hotel1.location + "],[" + hotel1.phoneNo + "]"
-        )
-    }
-    else
+        tempPhoneNo = readLine()!!
+
+        if (!tempName.isNullOrEmpty() && !tempDescript.isNullOrEmpty() && !tempRoomtype.isNullOrEmpty() && !tempLocation.isNullOrEmpty() && !tempPhoneNo.isNullOrEmpty())
+        {
+            hotel1.name = tempName
+            hotel1.description = tempDescript
+            hotel1.roomType = tempRoomtype
+            hotel1.location = tempLocation
+            hotel1.phoneNo = tempPhoneNo
+
+            println(
+                "New changes are updated" + "Hotel name is [" + hotel1.name
+                        + "]" +
+                        "Hotel description is [" + hotel1.description + "] with new room types [" + hotel1.roomType + "]" +
+                        "New location and phone number are [" + hotel1.location + "],[" + hotel1.phoneNo + "]"
+            )
+            logger.info("Hotel is updated : [$hotel1]")
+
+
+        } else
+            logger.info("Hotel is not Updated")
+    } else
         println("Hotel is not updated!!!")
 
-}
+    }
+
+
 
 fun listHotels(){
     println("Selected List All Hotels")
