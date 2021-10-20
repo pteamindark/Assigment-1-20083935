@@ -17,11 +17,29 @@ class HotelController {
         println("Hotel Kotlin app v1.0")
     }
 
+    fun start() {
+        var input: Int
+
+        do {
+            input = menu()
+            when (input) {
+                1 -> addHotel()
+                2 -> updateHotel()
+                3 -> listHotel()
+                4 -> searchHotel()
+                -1 -> println("Quiting the App")
+                else -> println("Not recognized")
+            }
+            println()
+        } while (input != -1)
+        logger.info { "Shutting Down Placemark Console App" }
+    }
+
     fun menu(): Int {
         return hotelView.menu()
     }
 
-    fun add() {
+    fun addHotel() {
         var hotel1 = hotelModel()
 
         if (hotelView.addHotelData(hotel1))
@@ -30,15 +48,15 @@ class HotelController {
             logger.info("Placemark Not Added")
     }
 
-    fun list() {
+    fun listHotel() {
         hotelView.listHotels(hotels)
     }
 
-    fun update() {
+    fun updateHotel() {
 
         hotelView.listHotels(hotels)
         var findId = hotelView.fetchId()
-        val hotel1 = search(findId)
+        val hotel1 = searchId(findId)
 
         if (hotel1 != null) {
             if (hotelView.updatingHotelData(hotel1)) {
@@ -51,13 +69,13 @@ class HotelController {
             println("Hotel is not updated")
     }
 
-    fun search() {
-        val hotel1 = search(hotelView.fetchId())!!
+    fun searchHotel() {
+        val hotel1 = searchId(hotelView.fetchId())!!
         hotelView.showHotel(hotel1)
     }
 
 
-    fun search(id: Long): hotelModel? {
+    fun searchId(id: Long): hotelModel? {
         var foundHotel = hotels.findSingle(id)
         return foundHotel
     }
