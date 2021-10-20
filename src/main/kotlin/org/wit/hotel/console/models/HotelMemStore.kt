@@ -13,11 +13,11 @@ import mu.KotlinLogging
 
         val hotels = ArrayList<hotelModel>()
 
-        override fun findAll(): List<hotelModel> {
+        override fun findEverything(): List<hotelModel> {
             return hotels
         }
 
-        override fun findOne(id: Long) : hotelModel? {
+        override fun findSingle(id: Long) : hotelModel? {
             var hotelFound: hotelModel? = hotels.find { p -> p.id == id }
             return hotelFound
         }
@@ -29,7 +29,7 @@ import mu.KotlinLogging
         }
 
         override fun updateing(hotel: hotelModel) {
-            var hotelFound = findOne(hotel.id!!)
+            var hotelFound = findSingle(hotel.id!!)
             if (hotelFound != null) {
                 hotelFound.name = hotel.name
                 hotelFound.description = hotel.description

@@ -74,7 +74,7 @@ fun hotelSearch() {
 }
 
 fun search(id: Long) : hotelModel? {
-    var hotelFind = hotels.findOne(id)
+    var hotelFind = hotels.findSingle(id)
     return hotelFind
 }
 

@@ -49,6 +49,12 @@ class HotelView {
         hotel.name = readLine()!!
         print("Enter the description for the hotel : ")
         hotel.description = readLine()!!
+        print("Please Enter what types of room hotel has : ")
+        hotel.roomType = readLine()!!
+        print("What is the location of the hotel : ")
+        hotel.location = readLine()!!
+        print("Phone number of the hotel1 : ")
+        hotel.phoneNo = readLine()!!
 
         return hotel.name.isNotEmpty() && hotel.description.isNotEmpty() && hotel.roomType.isNotEmpty() && hotel.location.isNotEmpty() && hotel.phoneNo.isNotEmpty()
     }
