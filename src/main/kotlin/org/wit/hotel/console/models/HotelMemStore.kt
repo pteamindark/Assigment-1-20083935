@@ -39,6 +39,11 @@ import mu.KotlinLogging
             }
         }
 
+        override fun delete(hotel: hotelModel) {
+            hotels.remove(hotel)
+        }
+
+
         internal fun logAll() {
             hotels.forEach { logger.info("${it}") }
         }

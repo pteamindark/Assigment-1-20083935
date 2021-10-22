@@ -6,6 +6,6 @@ interface HotelStore {
     fun findSingle(id: Long): hotelModel?
     fun make(hotel: hotelModel)
     fun updateing(hotel: hotelModel)
-
+    fun delete(hotel: hotelModel)
 
 }

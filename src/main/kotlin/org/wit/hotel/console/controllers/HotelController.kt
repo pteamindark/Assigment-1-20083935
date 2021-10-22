@@ -2,13 +2,14 @@ package org.wit.hotel.console.controllers
 
 
 import mu.KotlinLogging
-import org.wit.hotel.console.models.HotelMemStore
+import org.wit.hotel.console.models.HotelJSONStore
 import org.wit.hotel.console.models.hotelModel
 import org.wit.hotel.console.views.HotelView
 
 class HotelController {
 
-    val hotels = HotelMemStore()
+    //val hotels = HotelMemStore()
+    val hotels = HotelJSONStore()
     val hotelView = HotelView()
     val logger = KotlinLogging.logger {}
 
@@ -27,6 +28,7 @@ class HotelController {
                 2 -> updateHotel()
                 3 -> listHotel()
                 4 -> searchHotel()
+                5 -> delete()
                 -1 -> println("Quiting the App")
                 else -> println("Not recognized")
             }
@@ -68,6 +70,21 @@ class HotelController {
         } else
             println("Hotel is not updated")
     }
+
+    fun delete() {
+        hotelView.listHotels(hotels)
+        var searchId = hotelView.fetchId()
+        var hotel1 = searchId(searchId)
+
+        if(hotel1 != null) {
+            hotels.delete(hotel1)
+            println("Hotel Deleted...")
+            hotelView.listHotels(hotels)
+        }
+        else
+            println("Hotel Not Deleted...")
+    }
+
 
     fun searchHotel() {
         val hotel1 = searchId(hotelView.fetchId())!!

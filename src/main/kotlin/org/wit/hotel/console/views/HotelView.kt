@@ -2,6 +2,7 @@ package org.wit.hotel.console.views
 
 import org.wit.hotel.console.main.hotelView
 import org.wit.hotel.console.main.hotels
+import org.wit.hotel.console.models.HotelJSONStore
 import org.wit.hotel.console.models.HotelMemStore
 import org.wit.hotel.console.models.hotelModel
 
@@ -17,6 +18,7 @@ class HotelView {
         println(" 2. Update existing hotel")
         println(" 3. List hotels")
         println(" 4. Search for a hotel")
+        println(" 5. Delete Hotel")
         println("-1. Exit")
         println()
         print("Enter Option : ")
@@ -28,7 +30,7 @@ class HotelView {
         return option
     }
 
-    fun listHotels(placemarks : HotelMemStore) {
+    fun listHotels(placemarks: HotelJSONStore) {
         println("List hotels")
         println()
         placemarks.logAll()
