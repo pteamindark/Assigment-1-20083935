@@ -1,26 +1,18 @@
 [
   {
-    "id": 47355508428314658,
-    "name": "dddddddd",
-    "description": "ddddddd",
-    "roomType": "ddddddd",
-    "location": "dddddddd",
-    "phoneNo": "ddddddd"
+    "id": -8395667984792253644,
+    "name": "Doolyes Hotel",
+    "description": "Nice hotel",
+    "roomType": "double room only",
+    "location": "Waterford city, Quay 20",
+    "phoneNo": "085555555555"
   },
   {
-    "id": 643735494607267938,
-    "name": "ddddddddd",
-    "description": "dddddddd",
-    "roomType": "ddddddd",
-    "location": "ddddddd",
-    "phoneNo": "ddddddd"
-  },
-  {
-    "id": 2953423610855945851,
-    "name": "dddddddddddd",
-    "description": "ddddddddd",
-    "roomType": "ddddddddd",
-    "location": "ddddddddd",
-    "phoneNo": "ddddddddd"
+    "id": -645324883804957205,
+    "name": "Tower hotel",
+    "description": "Double room only",
+    "roomType": "Single room to rent",
+    "location": "waterford city",
+    "phoneNo": "08555566666"
   }
 ]
